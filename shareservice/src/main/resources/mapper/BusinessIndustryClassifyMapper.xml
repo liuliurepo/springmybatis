@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.share.mapper.BusinessIndustryClassifyMapper">
+    <select id="getAllBusinessIndustryClassify" resultType="BusinessIndustryClassify">
+        select industry_id industryId, business_type businessType, industry_type 
+        industryType, industry_subtype industrySubtype, industry_subtype_number 
+        industrySubtypeNumber, create_time createTime from business_industry_classify
+    </select>
+    
+    <select id="getBusinessIndustryClassifyByAddress" resultType="BusinessIndustryClassify">
+        select industry_id industryId, business_type businessType, industry_type 
+        industryType, industry_subtype industrySubtype, industry_subtype_number 
+        industrySubtypeNumber, create_time createTime from business_industry_classify
+    </select>
+</mapper>

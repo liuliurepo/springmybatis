@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.share.mapper.BusinessManagerMapper">
+    <select id="getAllBusinessManager" resultType="BusinessManager">
+        select business_id businessId,business_name businessName, fk_industry_id fkIndustryId,
+        province_id provinceId, province_name provinceName, city_id cityId, city_name cityName,
+        county_id countyId, county_name countyName, detail_address detailAddress, phone phone, 
+        account_status accountStatus, longitude longitude, latitude latitude, create_time createTime,
+        active_time activeTime from business_manager
+    </select>
+    <select id="getBusinessManagerByAddress" resultType="BusinessManager">
+        select business_id businessId,business_name businessName, fk_industry_id fkIndustryId,
+        province_id provinceId, province_name provinceName, city_id cityId, city_name cityName,
+        county_id countyId, county_name countyName, detail_address detailAddress, phone phone, 
+        account_status accountStatus, longitude longitude, latitude latitude, create_time createTime,
+        active_time activeTime from business_manager 
+        where longitude = #{longitude} and latitude = #{latitude}
+    </select>
+</mapper>
