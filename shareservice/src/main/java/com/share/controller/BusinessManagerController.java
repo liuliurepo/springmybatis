@@ -37,11 +37,9 @@ public class BusinessManagerController {
 		CommonRepsonse<List<BusinessManager>> response = new CommonRepsonse<List<BusinessManager>>();
 		try {
 			List<BusinessManager> list = businessManagerService.getAllBusinessManager();
-			response.setState("ok");
-			response.setResult(list);
+			response.successResponse(list);
 		} catch (Exception e) {
-			response.setState("fail");
-			response.setReason("getAllBusinessManager fail, reason is: " + e);
+			response.failResponse(e);
 		}
 		return response;
 	}
@@ -61,11 +59,9 @@ public class BusinessManagerController {
 		CommonRepsonse<List<BusinessManager>> response = new CommonRepsonse<List<BusinessManager>>();
 		try {
 			List<BusinessManager> list = businessManagerService.getBusinessManagerByAddress(longitude, latitude);
-			response.setState("ok");
-			response.setResult(list);
+			response.successResponse(list);
 		} catch (Exception e) {
-			response.setState("fail");
-			response.setReason("getBusinessManagerByAddress fail, reason is: " + e);
+			response.failResponse(e);
 		}
 		return response;
 	}

@@ -40,11 +40,9 @@ public class BusinessIndustryClassifyController {
 		logger.info("获取所有商户行业分类信息（开发者用）");
 		try {
 			List<BusinessIndustryClassify> list = businessIndustryClassifyService.getAllBusinessIndustryClassify();
-			response.setState("ok");
-			response.setResult(list);
+			response.successResponse(list);
 		} catch (Exception e) {
-			response.setState("fail");
-			response.setReason("getAllBusinessIndustryClassify fail, reason is: " + e);
+			response.failResponse(e);
 		}
 		return response;
 	}
